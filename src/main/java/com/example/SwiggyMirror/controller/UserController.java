@@ -1,6 +1,5 @@
 package com.example.SwiggyMirror.controller;
 
-import com.example.SwiggyMirror.model.Food;
 import com.example.SwiggyMirror.model.User;
 import com.example.SwiggyMirror.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

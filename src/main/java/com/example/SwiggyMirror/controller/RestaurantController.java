@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/restaurant")
-public class RestaurantContoller {
+public class RestaurantController {
 
     private final RestaurantService restaurantService;
 
     @Autowired
-    public RestaurantContoller(RestaurantService restaurantService) {
+    public RestaurantController(RestaurantService restaurantService) {
         this.restaurantService = restaurantService;
     }
 

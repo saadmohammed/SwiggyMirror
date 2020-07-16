@@ -4,7 +4,6 @@ import com.example.SwiggyMirror.exception.ResourceNotFoundException;
 import com.example.SwiggyMirror.model.Food;
 import com.example.SwiggyMirror.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -23,11 +22,11 @@ public class FoodService {
         return foodRepository.findAll(pageable);
     }
 
-    public void create(Food food){
+    public void create(Food food) {
         foodRepository.save(food);
     }
 
-    public Food updateFood(Food food, Integer foodId){
+    public Food updateFood(Food food, Integer foodId) {
         foodRepository.findById(foodId)
                 .orElseThrow(() -> new ResourceNotFoundException("Food", "id", foodId));
         return foodRepository.save(food);

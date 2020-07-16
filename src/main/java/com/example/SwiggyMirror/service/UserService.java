@@ -1,7 +1,6 @@
 package com.example.SwiggyMirror.service;
 
 import com.example.SwiggyMirror.exception.ResourceNotFoundException;
-import com.example.SwiggyMirror.model.Food;
 import com.example.SwiggyMirror.model.User;
 import com.example.SwiggyMirror.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +22,11 @@ public class UserService {
         return userRepository.findAll(pageable);
     }
 
-    public void create(User food){
+    public void create(User food) {
         userRepository.save(food);
     }
 
-    public User updateUser(User user, Integer userId){
+    public User updateUser(User user, Integer userId) {
         userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with ", "id ", user));
         return userRepository.save(user);
